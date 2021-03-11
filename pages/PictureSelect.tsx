@@ -40,7 +40,7 @@ export const PictureSelect: React.FC<PictureSelectProps> = (props) => {
       <div onClick={() => haddleAllCheck()}>
         <span
           className={
-            value.length === idLength ? Styles.checked : Styles.allCheck
+            value.length === idLength ? `${Styles.checked}` : Styles.allCheck
           }
         />
         <span className={Styles.allcheckText}>全选</span>
@@ -58,8 +58,10 @@ export const PictureSelect: React.FC<PictureSelectProps> = (props) => {
                   setValue(delValue);
                 }
               }}
-            ></span>
+            />
             <img src={item.url} />
+            <br />
+            <span className={Styles.wrap}>{item.url}</span>
           </span>
         ))}
       </div>
