@@ -21,11 +21,13 @@ const pictures = [
       "https://gw.alipayobjects.com/mdn/rms_d212b7/afts/img/A*LlfeSa8N0WgAAAAAAAAAAABkARQnAQ",
   },
 ];
-
+const { Fragment } = React;
 export default () => {
   const [value, setValue] = React.useState([]);
-
-  console.log(value); // 输出用户选择图片 id。
-
-  return <PictureSelect pictures={pictures}></PictureSelect>;
+  return (
+    <Fragment>
+      <PictureSelect pictures={pictures} value={value} setValue={setValue} />
+      <div>你已经选择了: {value.join(',')}</div>
+    </Fragment>
+  );
 };
